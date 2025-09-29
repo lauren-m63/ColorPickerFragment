@@ -82,6 +82,7 @@ public class ColorPickFragment extends Fragment {
 
         for(int i =0; i < grid.getChildCount(); i++){
             Button currentButton = (Button) grid.getChildAt(i);
+            currentButton.setOnClickListener(buttonListener);
             int c = Color.parseColor(colors[i]);
             currentButton.setBackgroundColor(c);
         }

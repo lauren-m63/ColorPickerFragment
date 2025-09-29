@@ -1,5 +1,7 @@
 package com.example.colorpicker;
 
+
+
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -81,6 +83,6 @@ public class InputFragment extends Fragment {
 
         root.addView(addButton);
 
-        return input1textView;
+        return root;
     }
 }
