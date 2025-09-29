@@ -4,17 +4,22 @@
     android:orientation="vertical">
 
 
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/colorFragment"
+    <fragment
+        android:id="@+id/colorPickFragment"
+        android:name="com.example.colorpicker.ColorPickFragment"
         android:layout_width="match_parent"
-        android:layout_height="330dp"
-        android:layout_weight="1" />
+        android:layout_height="wrap_content" />
 
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/ListFragment"
+    <fragment
+        android:id="@+id/inputFragment"
+        android:name="com.example.colorpicker.InputFragment"
         android:layout_width="match_parent"
-        android:layout_height="43dp"
-        android:layout_weight="1"/>
+        android:layout_height="wrap_content" />
+
+
+
+    <!--    android:name="com.example.colorpicker.InputFragment"-->
+<!--    android:name="com.example.colorpicker.ColorPickFragment"-->
 
 <!--    <EditText-->
 <!--        android:id="@+id/editTextText"-->
