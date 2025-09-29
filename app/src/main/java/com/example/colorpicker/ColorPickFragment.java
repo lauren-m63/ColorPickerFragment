@@ -20,7 +20,7 @@ public class ColorPickFragment extends Fragment {
     private String[] colors;
     private GridLayout grid;
 
-    private OnMessageSendListener mListener;
+    OnMessageSendListener mListener;
 
     ColorViewModel colorsModel;
 
@@ -29,8 +29,23 @@ public class ColorPickFragment extends Fragment {
         public void onClick(View v) {
             int buttonIndex = grid.indexOfChild(v);
 
+            int id = v.getId();
+            if (id == R.id.button1) {
+                // open first web fragment ???
+            } else if (id == R.id.button2) {
+                for(int i =0; i < grid.getChildCount(); i++){
+                    Button currentButton = (Button) grid.getChildAt(i);
+                    currentButton.setOnClickListener(buttonListener);
+                    int c = Color.parseColor(colors[i+1]);
+                    currentButton.setBackgroundColor(c);
+                }
+            }
+            else if (id == R.id.button3){
+
+            }
         }
     };
+
 
     public ColorPickFragment() {
         // Empty public constructor
@@ -71,5 +86,13 @@ public class ColorPickFragment extends Fragment {
             currentButton.setBackgroundColor(c);
         }
         return view;
+    }
+
+    public View.OnClickListener getButtonListener() {
+        return buttonListener;
+    }
+
+    public void setButtonListener(View.OnClickListener buttonListener) {
+        this.buttonListener = buttonListener;
     }
 }

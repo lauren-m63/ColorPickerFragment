@@ -3,6 +3,9 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="textview">TextView</string>
+    <string name="input1">input1</string>
+    <string name="input2">input2</string>
+    <string name="input3">input3</string>
 
     <string-array name="colors_array">
         <item>#FF0000</item> <!-- Red -->
