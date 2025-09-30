@@ -4,9 +4,14 @@
     android:orientation="vertical">
 
 
+    <FrameLayout
+        android:id="@+id/web_fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="156dp" />
+
     <fragment
-        android:id="@+id/colorPickFragment"
-        android:name="com.example.colorpicker.ColorPickFragment"
+        android:id="@+id/infoWebFragment"
+        android:name="com.example.colorpicker.InfoWebFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 

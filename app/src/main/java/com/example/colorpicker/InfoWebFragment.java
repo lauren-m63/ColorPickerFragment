@@ -35,15 +35,27 @@ public class InfoWebFragment extends Fragment {
         View fragmentRoot= inflater.inflate(R.layout.fragment_info_web, container, false);
 
         // CHANGE INPUT FRAG TO MATCH ??
-        listView  = getActivity().findViewById(R.id.inputFragment);
-        String baseLink = "https://seekingalpha.com/symbol/NEE";
+        listView  = fragmentRoot.findViewById(R.id.web_listView);
+        String baseLink = "https://seekingalpha.com/symbol/";
         LinkedList<Web> links = new LinkedList<>();
-        links.add(new Web("https://seekingalpha.com/symbol/NEE"));
-        links.add(new Web("https://seekingalpha.com/symbol/AAPL"));
-        links.add(new Web("https://seekingalpha.com/symbol/DIS"));
+        links.add(new Web("NEE", "https://seekingalpha.com/symbol/NEE"));
+        links.add(new Web("AAPL", "https://seekingalpha.com/symbol/AAPL"));
+        links.add(new Web("DIS", "https://seekingalpha.com/symbol/DIS"));
 
-        ArrayAdapter<Web> adapter = new ArrayAdapter<Web>(getActivity(), android.R.layout.simple_list_item_1);
+        ArrayAdapter<Web> adapter = new ArrayAdapter<Web>(getActivity(), android.R.layout.simple_list_item_1, links);
         listView.setAdapter(adapter);
+        listView.setOnItemClickListener((parent, view, position, id) -> {
+            Web selected = links.get(position);
+            WebFragment webFragment = WebFragment.newInstance(selected.url);
+
+            // Use the container instead of a static fragment ID
+            getParentFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.web_fragment_container, webFragment)
+                    .addToBackStack(null)
+                    .commit();
+        });
+
 
         return fragmentRoot;
     }
