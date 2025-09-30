@@ -2,6 +2,7 @@ package com.example.colorpicker;
 
 
 
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -49,9 +50,32 @@ public class InputFragment extends Fragment {
         root.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
         root.setOrientation(LinearLayout.VERTICAL);
 
+        LinearLayout NEELayout = new LinearLayout(context);
+        NEELayout.setLayoutParams(new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT));
+        NEELayout.setOrientation(LinearLayout.HORIZONTAL);
+        TextView NEETextView = new TextView(context);
+        NEETextView.setText("NEE");
+        NEETextView.setTextSize(18);
+        NEETextView.setPadding(16, 16, 16, 16);
+        NEETextView.setTextColor(Color.BLACK);
+        NEETextView.setClickable(true);
+        NEETextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Replace fragment with your web fragment here
+               // InfoWebFragment webFragment = InfoWebFragment.newInstance("https://seekingalpha.com/symbol/NEE");
+               // getParentFragmentManager().beginTransaction()
+                   //     .replace(R.id.fragment_container, webFragment) // container in your activity
+                    //    .addToBackStack(null)
+                    //    .commit();
+            }
+        });
+
         LinearLayout input1layout = new LinearLayout(context);
-        root.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
-        root.setOrientation(LinearLayout.HORIZONTAL);
+        input1layout.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+        input1layout.setOrientation(LinearLayout.HORIZONTAL);
         TextView input1textView = new TextView(getActivity());
         input1textView.setText(R.string.input1);
         input1Text = new EditText(context);
@@ -60,26 +84,27 @@ public class InputFragment extends Fragment {
         root.addView(input1layout);
 
         LinearLayout input2layout = new LinearLayout(context);
-        root.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
-        root.setOrientation(LinearLayout.HORIZONTAL);
+        input2layout.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+        input2layout.setOrientation(LinearLayout.HORIZONTAL);
         TextView input2textView = new TextView(getActivity());
-        input1textView.setText(R.string.input2);
+        input2textView.setText(R.string.input2);
         input2Text = new EditText(context);
         input2layout.addView(input2textView);
         input2layout.addView(input2Text);
         root.addView(input2layout);
 
         LinearLayout input3layout = new LinearLayout(context);
-        root.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
-        root.setOrientation(LinearLayout.HORIZONTAL);
+        input3layout.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+        input3layout.setOrientation(LinearLayout.HORIZONTAL);
         TextView input3textView = new TextView(getActivity());
-        input1textView.setText(R.string.input3);
+        input3textView.setText(R.string.input3);
         input3Text = new EditText(context);
         input3layout.addView(input3textView);
         input3layout.addView(input3Text);
         root.addView(input3layout);
 
         Button addButton = new Button(context);
+        addButton.setText(R.string.add_entry);
 
         root.addView(addButton);
 
