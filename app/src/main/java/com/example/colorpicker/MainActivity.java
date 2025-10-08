@@ -22,10 +22,10 @@ public class MainActivity extends AppCompatActivity implements OnMessageSendList
         if (savedInstanceState == null) {
             fg= getSupportFragmentManager();
             FragmentTransaction trans = fg.beginTransaction();
-            ColorPickFragment cf = new ColorPickFragment(); //object that you create needs to be of type of the fragment that you want to add
-            //trans.add(R.id.colorFragment, cf,"colorFrag");
-            ColorListFragment cl = new ColorListFragment();
-            //trans.add(R.id.ListFragment, cl, "listFrag");
+            WebFragment wf = new WebFragment(); //object that you create needs to be of type of the fragment that you want to add
+            InfoWebFragment iwf = new InfoWebFragment();
+            trans.add(R.id.listfragment, iwf,"listFrag");
+            trans.add(R.id.wefragment, wf, "wvFrag");
             trans.commit();
         }
     }

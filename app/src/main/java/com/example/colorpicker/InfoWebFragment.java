@@ -10,8 +10,6 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import org.w3c.dom.Text;
-
 import java.util.LinkedList;
 
 public class InfoWebFragment extends Fragment {
@@ -32,7 +30,7 @@ public class InfoWebFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View fragmentRoot= inflater.inflate(R.layout.fragment_info_web, container, false);
+        View fragmentRoot= inflater.inflate(R.layout.fragment_list, container, false);
 
         // CHANGE INPUT FRAG TO MATCH ??
         listView  = fragmentRoot.findViewById(R.id.web_listView);
@@ -49,11 +47,11 @@ public class InfoWebFragment extends Fragment {
             WebFragment webFragment = WebFragment.newInstance(selected.url);
 
             // Use the container instead of a static fragment ID
-            getParentFragmentManager()
-                    .beginTransaction()
-                    .replace(R.id.web_fragment_container, webFragment)
-                    .addToBackStack(null)
-                    .commit();
+//            getParentFragmentManager()
+//                    .beginTransaction()
+//                    .replace(R.id.web_fragment_container, webFragment)
+//                    .addToBackStack(null)
+//                    .commit();
         });
 
 

@@ -47,8 +47,9 @@ public class WebFragment extends Fragment {
 //not sure how to do this part.. i keep getting webpage not available and the internet told me this would help
             // it still says webpage not availabel but it is working as a button with a link
 
-            webView.loadUrl(url);
+
         }
+        webView.loadUrl("http://www.google.com");
 
         return root;
     }
